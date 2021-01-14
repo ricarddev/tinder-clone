@@ -1,0 +1,42 @@
+.chat-msg {
+    padding: 20px;
+}
+.chatScreen > p {
+    padding: 20px;
+    text-align: center;
+    color: gray;
+}
+.chat-txt {
+    margin-left: 10px;
+    background: lightgray;
+    padding: 15px;
+    border-radius: 20px;
+}
+.chat-txt-user {
+    margin-left: auto;
+    background: #29b3cd;
+    padding: 15px;
+    border-radius: 20px;
+    color: white;
+}
+
+.msg-sender{
+    display: flex;
+    padding: 5px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid lightgray;
+}
+input.input-msg {
+    flex: 1;
+    padding: 10px;
+    border: none;
+}
+.form-btn {
+    outline: none;
+    border: none;
+    background-color: white;
+    font-weight: bolder !important;
+    color: #fe3d71;
+}
