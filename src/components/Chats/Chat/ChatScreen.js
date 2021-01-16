@@ -4,7 +4,7 @@ import { useState } from 'react';
 import './ChatScreen.css';
 
 function ChatScreen() {
-
+    const [input, setInput] = useState();
     const [messages, setMessages] = useState([
         {
             name:"Ellen",
@@ -20,6 +20,13 @@ function ChatScreen() {
             message: "Pretty good! Hows it going?"
         }
     ]);
+
+    const handleSend = (e) => {
+        e.preventDefault();
+
+        setMessages([...messages, {message: input}]);
+        setInput('');
+    } 
 
     return (
         <div className="chatScreen">
@@ -38,10 +45,8 @@ function ChatScreen() {
             ))}
             <div >
                 <form className="msg-sender">
-                    <input className="input-msg" type="text" placeholder="Type a message..." />
-                    <IconButton>    
-                        <button className="form-btn"type="submit">Send</button>
-                    </IconButton>
+                    <input value={input} onChange={e => setInput(e.target.value)} className="input-msg" type="text" placeholder="Type a message..." />
+                    <button type="submit" className="form-btn" onClick={handleSend}>Send</button>           
                 </form>
             </div>
         </div>
